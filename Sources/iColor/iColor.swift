@@ -1,9 +1,5 @@
 import SwiftUI
 
-@available(watchOS 6.0, *)
-@available(OSX 10.15, *)
-@available(iOS 13.0, *)
-@available(tvOS 13.0, *)
 public extension Color {
     
     static let neonRed:        Color = Color(hue: 0/360,   saturation: 0.65, brightness: 1.00)
@@ -42,11 +38,10 @@ public extension Color {
     ///   - hex: A hex value, not case sensitive, represented as a `String`
     ///   - opacity: The opacity of the color to be constructed
     init?(_ hex: String, opacity: Double = 1.0) {
-        var hexFormatted: String = {
+        var hexFormatted: String =
             hex
                 .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                 .uppercased()
-        }()
         
         if hexFormatted.hasPrefix("#") {
             hexFormatted = String(hexFormatted.dropFirst())
